@@ -1,0 +1,39 @@
+
+
+Crear un nuevo repositorio Git remoto desde archivos locales (o repositorio git local o proyecto local) 
+
+Tenemos una aplicación realizada en local (por ejemplo en Eclipse) y queremos agregar esto a un nuevo repositorio Git compartido y remoto. y está configurando el repo remoto a través de ssh.
+
+En la mágina local:
+cd foo_project
+git init
+git add *
+git commit -m "Mi primer mensaje de commit"
+
+Ahora, crear el repositorio en el servidor Git. Los repositorios git son propiedad de un usuario y se encuentra en /dir_repo/
+
+En la maquina remota (repositorio Git remoto)
+sudo su - git
+cd /dir_repo/
+
+Crear un nuevo repositorio git como repositorio Git vacio o desnudo (bare).
+mkdir project_git
+cd project_git/
+git --bare init
+
+Hacer que los permisos estén establecidos correctamente y config inicial.
+git config core.sharedrepository 1
+git config receive.denyNonFastforwards true
+git config --bool core.bare true
+find objects -type d -exec chmod 02770 {} \;
+
+Ahora, volver al repositorio local, y añadir el repositorio remoto de nueva creación, así que hace track del repositorio remoto (origin).
+
+En la máquina local, en el proyecto git:
+git remote add origin ssh://usuario@servidor.com/dir_repo/project_git
+git push -u origin master
+
+Ahora, asegurarse de que la rama local está realizando el tracking al hacer un fetch, por ejemplo...
+git checkout origin/master
+git branch -f master origin/master
+git checkout master
