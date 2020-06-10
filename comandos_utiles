@@ -1,0 +1,2 @@
+Dar permisos de escritura al usuario actual
+sudo chown -R $USER {{CARPETE}}
