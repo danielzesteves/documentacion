@@ -1,2 +1,4 @@
 Dar permisos de escritura al usuario actual
-sudo chown -R $USER {{CARPETE}}
+sudo chown -R $USER {{CARPETa}}
+Asignar grupo a carpeta
+sudo chown -R www-data:www-data {{carpeta}}
