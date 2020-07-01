@@ -1,0 +1,4 @@
+Enviar request como ajax
+-------------------------
+X-Requested-With XMLHttpRequest
+Content-Type application/json
