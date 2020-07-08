@@ -1,0 +1,7 @@
+Options +FollowSymLinks
+
+RewriteEngine On
+RewriteRule ^$ dist/
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteRule ^(.*)$ dist/$1
