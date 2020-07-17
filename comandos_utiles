@@ -1,4 +1,9 @@
 Dar permisos de escritura al usuario actual
 sudo chown -R $USER {{CARPETa}}
+-------------------------------
 Asignar grupo a carpeta
 sudo chown -R www-data:www-data {{carpeta}}
+
+---------------------------
+Para usar cuando da un error de permisos al instalar dependencias
+sudo npm install --unsafe-perm=true --allow-root
