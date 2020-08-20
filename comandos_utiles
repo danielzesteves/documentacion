@@ -7,3 +7,7 @@ sudo chown -R www-data:www-data {{carpeta}}
 ---------------------------
 Para usar cuando da un error de permisos al instalar dependencias
 sudo npm install --unsafe-perm=true --allow-root
+
+-----------
+Cambiar version de PHP CLI
+sudo update-alternatives --config php
