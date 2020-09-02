@@ -11,3 +11,6 @@ sudo npm install --unsafe-perm=true --allow-root
 -----------
 Cambiar version de PHP CLI
 sudo update-alternatives --config php
+-----------
+Para instalacion de dependecias ignorando las versiones
+sudo composer update --ignore-platform-reqs
