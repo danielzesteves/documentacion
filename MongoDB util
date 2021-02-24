@@ -1,0 +1,6 @@
+Enable logging of executed queries
+before query execute
+DB::connection( 'mongodb' )->enableQueryLog();
+
+after query
+dd(DB::connection('mongodb')->getQueryLog());
